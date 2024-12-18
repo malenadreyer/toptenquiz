@@ -38,8 +38,8 @@ const TopFilm = () => {
     }),
   };
   const headerAnimation = {
-    hidden: { y: 200 }, // Starter i center
-    visible: { y: -50, transition: { duration: 0.8, ease: "easeInOut" } }, // Glider op
+    hidden: { y: 250 }, // Starter i center
+    visible: { y: -10, transition: { duration: 0.8, ease: "easeInOut" } }, // Glider op
   };
   return (
     <div className="grid w-[1000px] m-auto items-center justify-items-center ">
@@ -48,22 +48,31 @@ const TopFilm = () => {
         initial="hidden"
         animate={showList ? "visible" : "hidden"}
         variants={headerAnimation}
-        className="text-3xl z-10 text-center font-bold mb-4"
+        className="text-3xl text-white z-10 text-center font-bold mb-4"
       >
         Top 10 film i 2024 (ud fra boxoffice)
       </motion.h1>
 
     
       <button
-        onClick={() => setShowList(true)}
-        className="px-6 py-2 m-auto bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
-      >
-        Vis svar
-      </button>
+  onClick={() => setShowList(true)}
+  className="relative px-6 py-2 m-auto border border-white text-white rounded-lg overflow-hidden transition duration-300 group">
+  {/* GIF som baggrund */}
+  <span 
+    className="absolute inset-0 bg-center bg-cover animate-glimmer opacity-70 group-hover:opacity-90" 
+    style={{ backgroundImage: "url('/gifs.gif')" }}>
+  </span>
+  
+  {/* Hvid overlay ved hover */}
+  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition duration-300"></span>
+  
+  {/* Tekst */}
+  <span className="relative z-10">Vis svar</span>
+</button>
    
       {/* Grid-layout for to kolonner */}
       {showList && (
-        <div className="grid grid-cols-2 gap-8 w-full m-auto ">
+        <div className="grid grid-cols-2 gap-5 w-full m-auto ">
           {/* Venstre kolonne: 1-5 */}
           <ul>
             {top10Films.slice(0, 5).map((film, index) => (
@@ -73,7 +82,7 @@ const TopFilm = () => {
                 initial="hidden"
                 animate="visible"
                 variants={leftAnimation}
-                className="py-4 text-2xl font-bold "
+                className="pt-5 text-2xl text-white font-bold "
               >
                 {film}
               </motion.li>
@@ -89,7 +98,7 @@ const TopFilm = () => {
                 initial="hidden"
                 animate="visible"
                 variants={rightAnimation}
-                className="py-4 font-bold text-2xl"
+                className="pt-5 font-bold text-white text-2xl"
               >
                 {film}
               </motion.li>

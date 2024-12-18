@@ -13,6 +13,7 @@ import { useState } from "react";
 
 const Quiz = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [holdInputs, setHoldInputs] = useState([{ holdNavn: "", tal: "" }]);
 
   // Steps array med komponenter
   const steps = [
@@ -28,8 +29,26 @@ const Quiz = () => {
     { title: "Trin 10", content: <TopPornhub /> },
   ];
 
+  // Håndterer ændringer i inputfelterne
+  const handleInputChange = (index, field, value) => {
+    const newInputs = [...holdInputs];
+    newInputs[index][field] = value;
+    setHoldInputs(newInputs);
+  };
+
+  // Tilføj et nyt inputfelt
+  const handleAddInput = () => {
+    setHoldInputs([...holdInputs, { holdNavn: "", tal: "" }]);
+  };
+
+  // Fjern et inputfelt
+  const handleRemoveInput = (index) => {
+    const newInputs = holdInputs.filter((_, i) => i !== index);
+    setHoldInputs(newInputs);
+  };
+
   return (
-    <div className="grid w-full max-w-[1000px] mt-24 m-auto items-center">
+    <div className="grid w-full max-w-[1000px] mt-10 m-auto  items-center">
       <h2 className="text-2xl font-semibold text-center mb-8">
         {steps[currentStep].title}
       </h2>
@@ -37,8 +56,72 @@ const Quiz = () => {
       {/* Content for hvert trin */}
       <div className="mb-32">{steps[currentStep].content}</div>
 
+      {/* Inputfelter til holdnavn og tal */}
+      <div className="fixed bottom-[80px] left-0 ">
+        <div className=" flex w-[1400px] m-auto gap-4 justify-center items-center ">
+          <div className=" flex gap-5">
+            {holdInputs.map((input, index) => (
+              <div
+                key={index}
+                className="grid bg-neutral-800 rounded-lg p-5 grid-cols-1 justify-items-center gap-2 items-center" >
+                {/* Holdnavn input */}
+                <input
+                  type="text"
+                  value={input.holdNavn}
+                  onChange={(e) => handleInputChange(index, "holdNavn", e.target.value)}
+                  placeholder="Tema name"
+                  className="px-2 py-1  w-32"
+                />
+                {/* Tal input */}
+                <input
+                  type="number"
+                  value={input.tal}
+                  onChange={(e) => handleInputChange(index, "tal", e.target.value)}
+                  placeholder="Points"
+                  className="px-2 py-1  w-32"
+                />
+                {/* Fjern-knap */}
+                <button
+  onClick={() => handleRemoveInput(index)}
+  className="relative px-2  m-auto border border-white text-white rounded-[9999px] overflow-hidden transition duration-300 group">
+  {/* GIF som baggrund */}
+  <span 
+    className="absolute inset-0 bg-center bg-cover opacity-70 group-hover:opacity-90" 
+    style={{ backgroundImage: "url('/gifs.gif')" }}>
+  </span>
+  
+  {/* Hvid overlay ved hover */}
+  <span className="absolute inset-0  opacity-0 group-hover:opacity-20 transition duration-300"></span>
+  
+  {/* Tekst */}
+  <span className="relative z-10 text-white">-</span>
+</button>
+              </div>
+            ))}
+           
+          </div>
+          <div >
+           <button
+  onClick={handleAddInput}
+  className="relative px-2  m-auto border border-white text-white rounded-[9999px] overflow-hidden transition duration-300 group">
+  {/* GIF som baggrund */}
+  <span 
+    className="absolute inset-0 bg-center bg-cover opacity-70 group-hover:opacity-90" 
+    style={{ backgroundImage: "url('/gifs.gif')" }}>
+  </span>
+  
+  {/* Hvid overlay ved hover */}
+  <span className="absolute inset-0  opacity-0 group-hover:opacity-20 transition duration-300"></span>
+  
+  {/* Tekst */}
+  <span className="relative z-10 text-white">+</span>
+</button>
+            </div>
+        </div>
+      </div>
+
       {/* Navigation - placeret fast i bunden */}
-      <div className="fixed bottom-0 left-0 w-full bg-white shadow-md py-4">
+      <div className="fixed bottom-0 left-0 w-full pb-5">
         <div className="flex justify-center gap-4">
           <button
             onClick={() => setCurrentStep((prev) => prev - 1)}
