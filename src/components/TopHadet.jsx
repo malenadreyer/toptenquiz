@@ -50,7 +50,7 @@ const TopHadet = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest mest hadet personer i 2024
+          Top 10 mest hadet personer i 2024 (DK)
         </motion.h1>
   
       

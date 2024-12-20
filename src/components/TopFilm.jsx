@@ -50,7 +50,7 @@ const TopFilm = () => {
         variants={headerAnimation}
         className="text-3xl text-white z-10 text-center font-bold mb-4"
       >
-        Top 10 film i 2024 (ud fra boxoffice)
+        Top 10 film i 2024 (ud fra boxoffice) (WORLD)
       </motion.h1>
 
     

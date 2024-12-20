@@ -50,7 +50,7 @@ const TopJule = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest streamede julesange i dk i 2023
+          Top 10 mest streamede julesange i 2023 (DK)
         </motion.h1>
   
       

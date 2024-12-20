@@ -50,7 +50,7 @@ const TopSange = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest stremaede sange i verden 2024
+          Top 10 mest streamede sange i 2024 (WORLD)
         </motion.h1>
   
       

@@ -50,7 +50,7 @@ const TopGoogle = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest google personer i DK i 2024
+          Top 10 mest google personer i 2024 (DK)
         </motion.h1>
   
       

@@ -50,7 +50,7 @@ const TopSprog = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest snakkede sprog
+          Top 10 mest snakkede sprog i verden
         </motion.h1>
   
       

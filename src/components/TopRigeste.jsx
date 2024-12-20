@@ -82,7 +82,7 @@ const TopRigeste = () => {
                   initial="hidden"
                   animate="visible"
                   variants={leftAnimation}
-                  className="pt-5 text-2xl text-white font-bold "
+                  className="pt-5 text-xl text-white font-bold "
                 >
                   {film}
                 </motion.li>
@@ -98,7 +98,7 @@ const TopRigeste = () => {
                   initial="hidden"
                   animate="visible"
                   variants={rightAnimation}
-                  className="pt-5 font-bold text-white text-2xl"
+                  className="pt-5 font-bold text-white text-xl"
                 >
                   {film}
                 </motion.li>

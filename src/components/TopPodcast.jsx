@@ -50,7 +50,7 @@ const TopPodcast = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest streamede podcast i verden i 2024
+          Top 10 mest streamede podcast i 2024 (WORLD)
         </motion.h1>
   
       
