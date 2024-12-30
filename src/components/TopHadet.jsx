@@ -24,7 +24,7 @@ const TopHadet = () => {
       visible: (i) => ({
         opacity: 1,
         x: 0,
-        transition: { delay: (i - 1) * 0.8 + 1.5},
+        transition: { delay: (i - 1) * 2 + 1.5},
       }),
     };
   
@@ -34,7 +34,7 @@ const TopHadet = () => {
       visible: (i) => ({
         opacity: 1,
         x: 0,
-        transition: { delay: (i - 1) * 0.8 + 1.5 }, // Ekstra delay for højre kolonne
+        transition: { delay: (i - 1) * 2 + 1.5 }, // Ekstra delay for højre kolonne
       }),
     };
     const headerAnimation = {
