@@ -6,16 +6,16 @@ const TopPodcast = () => {
     const [showList, setShowList] = useState(false);
 
     const top10Podcast = [
-      "1. Joe Rogan",
-      "2. Call Her Daddy",
-      "3. This Past Week - Theo Von",
-      "4. Crime Junkie",
-      "5. The Daily (New York Times",
-      "6. The Tucker Carlsen Show",
-      "7. Huberman Lab",
-      "8. Armchair with Dax Shepard",
-      "9. Smosh Reads Reddit Sheperd",
-      "10. Shawn Ryan Show",
+      "1. Josephine Skriver - 8.2 mil",
+      "2. Christian Eriksen - 5.1 mil",
+      "3. Nikolaj Coster-Waldau - 3 mil",
+      "4. Alex Høgh Andersen - 2.2 mil",
+      "5. Mads Mikkelsen 1.7 mil",
+      "6. Lars Ulrich - 1.6 mil",
+      "7. Andreas Christenen - 1.5 mil",
+      "8. Pernilie Teisbeak - 1.4 mil",
+      "9. Martin Braithwaite - 1.4 mil",
+      "10. Caroline Wozniachi 1.3 mil",
     ];
   
     // Animation for venstre kolonne (1-5)
@@ -50,7 +50,7 @@ const TopPodcast = () => {
           variants={headerAnimation}
           className="text-3xl text-white z-10 text-center font-bold mb-4"
         >
-          Top 10 mest streamede podcast i 2024 (WORLD)
+          Top 10 mest fulgte mennesker på Instagram (DK)
         </motion.h1>
   
       
